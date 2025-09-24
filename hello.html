@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability and Statistics - Comprehensive Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 12px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left: 4px solid #2563eb;
+            border-radius: 5px;
+        }
+        
+        .subsection {
+            margin-bottom: 20px;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        
+        .definition {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .theorem {
+            background: #fefce8;
+            border: 1px solid #fde047;
+            border-left: 4px solid #eab308;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .theorem-title {
+            font-weight: 600;
+            color: #a16207;
+            margin-bottom: 8px;
+        }
+        
+        .formula {
+            background: #f1f5f9;
+            border: 2px solid #3b82f6;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            color: #1e40af;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .axiom {
+            background: #fdf4ff;
+            border: 1px solid #e879f9;
+            border-left: 4px solid #c084fc;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+        
+        .property {
+            background: #ecfdf5;
+            border: 1px solid #86efac;
+            border-left: 4px solid #22c55e;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 2px solid #374151;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        .comparison-table th {
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .comparison-table td {
+            font-family: 'Times New Roman', serif;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        
+        .comparison-table tr:nth-child(odd) {
+            background: white;
+        }
+        
+        .math {
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+        
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .note {
+            background: #eff6ff;
+            border: 1px solid #93c5fd;
+            border-left: 4px solid #3b82f6;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+        
+        @media print {
+            body { 
+                font-size: 11px;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .container { 
+                max-width: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            .section { 
+                page-break-inside: avoid;
+            }
+            .comparison-table {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Probability and Statistics</h1>
+            <p>Comprehensive Guide - Theory, Formulas, and Applications</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">1. Fundamental Concepts</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Random Experiment and Sample Space</h3>
+                <div class="definition">
+                    <strong>Random Experiment:</strong> An experiment involving randomness whose outcome cannot be predicted with certainty.
+                </div>
+                <div class="definition">
+                    <strong>Sample Space (Ω):</strong> The set of all possible outcomes of a random experiment. It could be finite or infinite.
+                </div>
+                <div class="definition">
+                    <strong>Sample Point (ω):</strong> An element ω ∈ Ω, called a sample point or possible outcome.
+                </div>
+                <div class="definition">
+                    <strong>Event (A):</strong> A subset A ⊆ Ω.
+                </div>
+                <div class="definition">
+                    <strong>Powerset P(A):</strong> A set whose members are all possible subsets of A.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">2. Probability Axioms and Measure</h2>
+            
+            <div class="definition">
+                <strong>Probability Measure:</strong> P can be defined as a set-function P : P(Ω) → [0, 1] that satisfies three axioms.
+            </div>
+            
+            <div class="axiom">
+                <strong>Axiom 1:</strong> P(∅) = 0, P(Ω) = 1
+            </div>
+            
+            <div class="axiom">
+                <strong>Axiom 2:</strong> For a set A ⊆ Ω we have 0 ≤ P(A) ≤ 1
+            </div>
+            
+            <div class="axiom">
+                <strong>Axiom 3 (Countable Additivity):</strong> For a disjoint collection of events A₁, A₂, ...<br>
+                <div class="formula">P(⋃ᵢ₌₁^∞ Aᵢ) = ∑ᵢ₌₁^∞ P(Aᵢ)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">3. σ-Algebra and Probability Space</h2>
+            
+            <div class="definition">
+                <strong>Event Space (σ-algebra F):</strong> A collection of subsets of Ω that satisfy:
+                <ul>
+                    <li>∅ ∈ F and Ω ∈ F</li>
+                    <li>A ∈ F ⟹ Aᶜ ∈ F</li>
+                    <li>A₁, A₂, ..., Aₙ, ... ∈ F ⟹ ⋃ₙ₌₁^∞ Aₙ ∈ F</li>
+                </ul>
+            </div>
+            
+            <div class="definition">
+                <strong>Probability Space:</strong> The trio (Ω, F, P) is called a probability space.
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Special σ-Algebras</h3>
+                
+                <div class="definition">
+                    <strong>Borel σ-algebra B[0,1]:</strong> Generated by sets of the form [a,b], (a,b), (a,b], or [a,b) where a ≤ b and a,b ∈ [0,1].
+                </div>
+                
+                <div class="definition">
+                    <strong>Borel σ-algebra B(ℝ):</strong> Generated by open sets of the form (a,b) where a ≤ b and a,b ∈ ℝ. Contains intervals: [a,b], [a,b), (a,∞), [a,∞), (-∞,b], (-∞,b), {a}
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">4. Conditional Probability</h2>
+            
+            <div class="formula">
+                P(B|A) := P(A ∩ B)/P(A) when P(A) > 0
+            </div>
+            
+            <div class="formula">
+                P(B|A) = P(A|B)P(B)/P(A)
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Chain Rule for Conditional Probability</div>
+                <div class="formula">
+                    P(A₁ ∩ A₂ ... ∩ Aₙ) = P(A₁)P(A₂|A₁)P(A₃|A₁A₂)...P(Aₙ|Aₙ₋₁...A₁)
+                </div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Law of Total Probability</div>
+                Let B₁, B₂, ..., Bₙ be a partition of sample space Ω. Then for any event A:
+                <div class="formula">
+                    P(A) = ∑ᵢ₌₁ⁿ P(A ∩ Bᵢ) = ∑ᵢ₌₁ⁿ P(A|Bᵢ)P(Bᵢ)
+                </div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Bayes' Theorem</div>
+                Let B₁, B₂, ..., Bₙ be a partition of sample space Ω. For any event A with P(A) > 0:
+                <div class="formula">
+                    P(Bⱼ|A) = P(A|Bⱼ)P(Bⱼ) / ∑ᵢ₌₁ⁿ P(A|Bᵢ)P(Bᵢ)
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">5. Independence and Correlation</h2>
+            
+            <div class="definition">
+                <strong>Independent Events:</strong> Two events A, B are independent iff P(A|B) = P(A) and P(B|A) = P(B)
+                <div class="formula">P(A ∩ B) = P(A)P(B)</div>
+            </div>
+            
+            <div class="definition">
+                <strong>Mutually Independent Events:</strong> A collection {Aᵢ, i ∈ I} are mutually independent if:
+                <div class="formula">P(⋂ⱼ∈ⱼ Aⱼ) = ∏ⱼ∈ⱼ P(Aⱼ) for any subset J of I</div>
+            </div>
+            
+            <div class="definition">
+                <strong>Pairwise Independent Events:</strong> Any pair of events from the collection are independent.
+            </div>
+            
+            <div class="property">
+                <strong>Positive Correlation:</strong> A and B are positively correlated iff P(A|B) > P(A)
+            </div>
+            
+            <div class="property">
+                <strong>Negative Correlation:</strong> A and B are negatively correlated iff P(A|B) < P(A)
+            </div>
+            
+            <div class="property">
+                <strong>Mutually Exclusive:</strong> P(A ∩ B) = 0
+            </div>
+            
+            <div class="definition">
+                <strong>Conditional Independence:</strong> Two events A and B are conditionally independent of event C (P(C) > 0) if:
+                <div class="formula">P(AB|C) = P(A|C)P(B|C)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">6. Random Variables</h2>
+            
+            <div class="definition">
+                <strong>Random Variable:</strong> A function X : Ω → Ω' that transforms probability space (Ω, F, P) to (Ω', F', P_X) and is '(F, F')-measurable'.
+                <br>The measurability implies: for every B ∈ F', we have X⁻¹(B) ∈ F.
+                <br>P_X(B) := P(X⁻¹(B)) for all B ∈ F'.
+            </div>
+            
+            <div class="definition">
+                <strong>Real-valued Random Variable:</strong> A map X : (Ω, F, P) → (ℝ, B(ℝ), P_X) such that for each B ∈ B(ℝ):
+                <br>X⁻¹(B) := {ω ∈ Ω : X(ω) ∈ B} satisfies X⁻¹(B) ∈ F and P_X(B) = P(ω ∈ Ω : X(ω) ∈ B)
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">7. Discrete Random Variables</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Probability Mass Function (PMF)</h3>
+                <div class="formula">p_X(x) := P_X({x}) for x ∈ Ω'</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Cumulative Distribution Function (CDF)</h3>
+                <div class="formula">F_X(x₀) := ∑_x≤x₀ p_X(x) = P{ω ∈ Ω : X(ω) ≤ x₀}</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Expectation and Moments</h3>
+                <div class="formula">E[X] = ∑_x∈Ω' x p_X(x)</div>
+                <div class="formula">E[X^n] = ∑_x∈Ω' x^n p_X(x)</div>
+                <div class="formula">E[g(X)] := ∑_x∈Ω' g(x)p_X(x)</div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Law of the Unconscious Statistician (Discrete)</div>
+                If Y = g(X) and X is discrete with pmf p_X(·), then:
+                <div class="formula">E[Y] = ∑_x g(x)p_X(x)</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Variance</h3>
+                <div class="formula">Var(X) = E[(X - E[X])²] = E[X²] - E[X]²</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Common Discrete Distributions</h3>
+                
+                <div class="property">
+                    <strong>Bernoulli Distribution:</strong>
+                    <br>PMF: P(X = 1) = p, P(X = 0) = 1-p
+                    <br>E[X] = p, Var(X) = p(1-p)
+                </div>
+                
+                <div class="property">
+                    <strong>Binomial Distribution:</strong>
+                    <br>PMF: P(X = k) = C(n,k) p^k (1-p)^(n-k)
+                    <br>E[X] = np, Var(X) = np(1-p)
+                </div>
+                
+                <div class="property">
+                    <strong>Geometric Distribution:</strong>
+                    <br>PMF: p_N(k) = (1-p)^(k-1)p (number of tosses for first head)
+                    <br>Survival function: F̄_N(k) := 1 - F_N(k) = P(N > k)
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">8. Continuous Random Variables</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Probability Density Function (PDF)</h3>
+                <div class="formula">
+                    f_X(x) := lim_{Δ→0⁺} P(x < X ≤ x + Δ)/Δ = lim_{Δ→0⁺} [F_X(x + Δ) - F_X(x)]/Δ = dF_X(x)/dx
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Properties of Continuous RVs</h3>
+                <div class="property">
+                    P_X({a}) = 0 (no mass at any point)
+                </div>
+                <div class="property">
+                    P_X([a,b]) = P_X((a,b)) = P_X([a,b)) = P_X((a,b])
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">CDF and PDF Relationship</h3>
+                <div class="formula">F_X(x) = ∫_{-∞}^x f_X(u)du</div>
+                <div class="formula">P_X([a,b]) = F_X(b) - F_X(a) = ∫_a^b f_X(u)du</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Expectation and Moments</h3>
+                <div class="formula">E[X] = ∫_{-∞}^∞ u f_X(u)du</div>
+                <div class="formula">E[X^n] = ∫_{-∞}^∞ u^n f_X(u)du</div>
+                <div class="formula">E[g(X)] = ∫_{-∞}^∞ g(u) f_X(u)du</div>
+                <div class="formula">Var[X] = E[g(X)] where g(x) = (x - E[X])²</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Linear Transformations</h3>
+                <div class="property">
+                    For Y = aX + b: E[Y] = aE[X] + b
+                </div>
+                <div class="property">
+                    For Y = aX + b and a ≥ 0: F_Y(y) = F_X((y-b)/a)
+                </div>
+                <div class="property">
+                    For Y = aX + b and a < 0: F_Y(y) = 1 - F_X((y-b)/a)
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Common Continuous Distributions</h3>
+                
+                <div class="property">
+                    <strong>Uniform Distribution U[a,b]:</strong>
+                    <br>PDF: f_X(x) = 1/(b-a) for x ∈ [a,b]
+                    <br>CDF: F_X(x) = (x-a)/(b-a) for x ∈ [a,b]
+                    <br>E[X] = (a+b)/2, Var(X) = (b-a)²/12
+                </div>
+                
+                <div class="property">
+                    <strong>Exponential Distribution (λ):</strong>
+                    <br>PDF: f_X(x) = λe^(-λx) for x ≥ 0
+                    <br>CDF: F_X(x) = 1 - e^(-λx) for x ≥ 0
+                    <br>E[X] = 1/λ, Var(X) = 1/λ²
+                    <br>E[X^n] = n!/λ^n
+                    <br><strong>Memoryless Property:</strong> P(X > a + h | X > a) = P(X > h)
+                </div>
+                
+                <div class="property">
+                    <strong>Normal Distribution N(μ, σ²):</strong>
+                    <br>PDF: f_X(x) = (1/√(2πσ²)) e^(-½((x-μ)/σ)²)
+                    <br>E[X] = μ, Var(X) = σ²
+                    <br><strong>Standard Normal CDF:</strong> Φ(x) = (1/√(2π)) ∫_{-∞}^x e^(-t²/2) dt
+                    <br>If X ~ N(μ, σ²), then Y = aX + b ~ N(aμ + b, a²σ²)
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">9. Joint Random Variables</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Discrete Joint Random Variables</h3>
+                
+                <div class="formula">
+                    <strong>Joint PMF:</strong> p_{XY}(x,y) := P{ω ∈ Ω : X(ω) = x and Y(ω) = y}
+                </div>
+                
+                <div class="formula">
+                    <strong>Joint CDF:</strong> F_{XY}(x,y) := P{ω ∈ Ω : X(ω) ≤ x and Y(ω) ≤ y}
+                </div>
+                
+                <div class="subsection-title">Marginal Distributions</div>
+                <div class="formula">p_X(x) = ∑_y p_{XY}(x,y)</div>
+                <div class="formula">p_Y(y) = ∑_x p_{XY}(x,y)</div>
+                
+                <div class="subsection-title">Independence</div>
+                <div class="formula">p_{XY}(x,y) = p_X(x)p_Y(y) and F_{XY}(x,y) = F_X(x)F_Y(y)</div>
+                
+                <div class="subsection-title">Joint Expectation</div>
+                <div class="formula">E[g(X,Y)] = ∑_x ∑_y g(x,y)p_{XY}(x,y)</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Continuous Joint Random Variables</h3>
+                
+                <div class="formula">
+                    <strong>Joint PDF:</strong> f_{XY}(x,y) := ∂²F_{XY}(x,y)/(∂x∂y)
+                </div>
+                
+                <div class="formula">
+                    <strong>Joint CDF:</strong> F_{XY}(x,y) := ∫_{-∞}^x ∫_{-∞}^y f_{XY}(s,t)dsdt
+                </div>
+                
+                <div class="subsection-title">Marginal PDFs</div>
+                <div class="formula">f_X(x) = ∫_{-∞}^∞ f_{XY}(x,y)dy</div>
+                <div class="formula">f_Y(y) = ∫_{-∞}^∞ f_{XY}(x,y)dx</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Covariance and Correlation</h3>
+                <div class="formula">Cov(X,Y) = E[(X - E[X])(Y - E[Y])] = E[XY] - E[X]E[Y]</div>
+                
+                <div class="note">
+                    <strong>Important:</strong> Independent random variables are uncorrelated (Cov(X,Y) = 0), but uncorrelated random variables need not be independent!
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Conditional Distributions</h3>
+                <div class="formula">p_{XY}(x,y) = p_{X|Y}(x|y)p_Y(y)</div>
+                <div class="formula">∑_x p_{X|Y}(x|y) = 1</div>
+                <div class="formula">p_X(x) = ∑_y p_{X|Y}(x|y)p_Y(y)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">10. Formula Comparison Table</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Discrete Case</th>
+                        <th>Continuous Case</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Basic Function</strong></td>
+                        <td>PMF: p_X(x)</td>
+                        <td>PDF: f_X(x)</td>
+                        <td>PMF gives probabilities; PDF gives density</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CDF</strong></td>
+                        <td>F_X(x) = ∑_{x'≤x} p_X(x')</td>
+                        <td>F_X(x) = ∫_{-∞}^x f_X(u)du</td>
+                        <td>Same definition: P(X ≤ x)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Probability</strong></td>
+                        <td>P(X = x) = p_X(x)</td>
+                        <td>P(X = x) = 0</td>
+                        <td>Continuous: zero probability at points</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interval Probability</strong></td>
+                        <td>P(a ≤ X ≤ b) = ∑_{a≤x≤b} p_X(x)</td>
+                        <td>P(a ≤ X ≤ b) = ∫_a^b f_X(x)dx</td>
+                        <td>For continuous: [a,b] = (a,b)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expectation</strong></td>
+                        <td>E[X] = ∑_x x p_X(x)</td>
+                        <td>E[X] = ∫_{-∞}^∞ x f_X(x)dx</td>
+                        <td>Sum vs. integral</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Function Expectation</strong></td>
+                        <td>E[g(X)] = ∑_x g(x)p_X(x)</td>
+                        <td>E[g(X)] = ∫_{-∞}^∞ g(x)f_X(x)dx</td>
+                        <td>LOTUS: Law of Unconscious Statistician</td>
+                    </tr>
+                    <tr>
+                        <td><strong>nth Moment</strong></td>
+                        <td>E[X^n] = ∑_x x^n p_X(x)</td>
+                        <td>E[X^n] = ∫_{-∞}^∞ x^n f_X(x)dx</td>
+                        <td>Both follow same pattern</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Variance</strong></td>
+                        <td>Var(X) = E[X²] - E[X]²</td>
+                        <td>Var(X) = E[X²] - E[X]²</td>
+                        <td>Same formula for both cases</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Joint Distribution</strong></td>
+                        <td>p_{XY}(x,y)</td>
+                        <td>f_{XY}(x,y)</td>
+                        <td>Joint PMF vs. joint PDF</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Marginal Distribution</strong></td>
+                        <td>p_X(x) = ∑_y p_{XY}(x,y)</td>
+                        <td>f_X(x) = ∫_{-∞}^∞ f_{XY}(x,y)dy</td>
+                        <td>Sum over vs. integrate over other variable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Independence</strong></td>
+                        <td>p_{XY}(x,y) = p_X(x)p_Y(y)</td>
+                        <td>f_{XY}(x,y) = f_X(x)f_Y(y)</td>
+                        <td>Factorization condition identical</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Joint Expectation</strong></td>
+                        <td>E[g(X,Y)] = ∑_x∑_y g(x,y)p_{XY}(x,y)</td>
+                        <td>E[g(X,Y)] = ∫∫ g(x,y)f_{XY}(x,y)dxdy</td>
+                        <td>Double sum vs. double integral</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conditional Distribution</strong></td>
+                        <td>p_{X|Y}(x|y) = p_{XY}(x,y)/p_Y(y)</td>
+                        <td>f_{X|Y}(x|y) = f_{XY}(x,y)/f_Y(y)</td>
+                        <td>Same ratio definition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Law of Total Expectation</strong></td>
+                        <td>E[X] = ∑_y E[X|Y=y]p_Y(y)</td>
+                        <td>E[X] = ∫_{-∞}^∞ E[X|Y=y]f_Y(y)dy</td>
+                        <td>Weighted average over Y</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">11. Important Theorems and Properties</h2>
+            
+            <div class="theorem">
+                <div class="theorem-title">Properties of Expectation</div>
+                <ul>
+                    <li><strong>Linearity:</strong> E[aX + bY] = aE[X] + bE[Y]</li>
+                    <li><strong>Independence:</strong> If X and Y are independent, then E[XY] = E[X]E[Y]</li>
+                    <li><strong>Monotonicity:</strong> If X ≤ Y, then E[X] ≤ E[Y]</li>
+                </ul>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Properties of Variance</div>
+                <ul>
+                    <li>Var(aX + b) = a²Var(X)</li>
+                    <li>If X and Y are independent: Var(X + Y) = Var(X) + Var(Y)</li>
+                    <li>Var(X) = E[(X - E[X])²] = E[X²] - E[X]²</li>
+                </ul>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Covariance Properties</div>
+                <ul>
+                    <li>Cov(X,X) = Var(X)</li>
+                    <li>Cov(X,Y) = Cov(Y,X)</li>
+                    <li>Cov(aX + b, cY + d) = acCov(X,Y)</li>
+                    <li>If X and Y are independent: Cov(X,Y) = 0</li>
+                </ul>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Memoryless Property (Exponential)</div>
+                For exponential distribution with parameter λ:
+                <div class="formula">P(X > a + h | X > a) = e^(-λh) = P(X > h)</div>
+                This property makes exponential distribution crucial for modeling waiting times and inter-arrival times in queueing theory.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">12. Key Relationships and Identities</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">CDF and Survival Function</h3>
+                <div class="formula">F̄(x) = 1 - F(x) = P(X > x)</div>
+                <div class="note">The survival function F̄(x) gives the probability that the random variable exceeds x.</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Transformation Rules</h3>
+                <div class="property">
+                    <strong>Linear Transformation:</strong>
+                    <br>If Y = aX + b, then:
+                    <ul>
+                        <li>E[Y] = aE[X] + b</li>
+                        <li>Var(Y) = a²Var(X)</li>
+                        <li>If a > 0: F_Y(y) = F_X((y-b)/a)</li>
+                        <li>If a < 0: F_Y(y) = 1 - F_X((y-b)/a)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Moment Generating Functions</h3>
+                <div class="definition">
+                    <strong>MGF:</strong> M_X(t) = E[e^(tX)]
+                    <br><strong>Discrete:</strong> M_X(t) = ∑_x e^(tx) p_X(x)
+                    <br><strong>Continuous:</strong> M_X(t) = ∫_{-∞}^∞ e^(tx) f_X(x)dx
+                </div>
+                
+                <div class="property">
+                    <strong>MGF Properties:</strong>
+                    <ul>
+                        <li>E[X^n] = M_X^(n)(0) (nth derivative at 0)</li>
+                        <li>If X and Y independent: M_{X+Y}(t) = M_X(t)M_Y(t)</li>
+                        <li>For Y = aX + b: M_Y(t) = e^(bt)M_X(at)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">13. Distribution Summary Table</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Distribution</th>
+                        <th>Parameters</th>
+                        <th>PMF/PDF</th>
+                        <th>Mean</th>
+                        <th>Variance</th>
+                        <th>Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bernoulli</strong></td>
+                        <td>p ∈ [0,1]</td>
+                        <td>P(X=1)=p, P(X=0)=1-p</td>
+                        <td>p</td>
+                        <td>p(1-p)</td>
+                        <td>Single trial success/failure</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Binomial</strong></td>
+                        <td>n ∈ ℕ, p ∈ [0,1]</td>
+                        <td>C(n,k)p^k(1-p)^(n-k)</td>
+                        <td>np</td>
+                        <td>np(1-p)</td>
+                        <td>Number of successes in n trials</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geometric</strong></td>
+                        <td>p ∈ [0,1]</td>
+                        <td>(1-p)^(k-1)p</td>
+                        <td>1/p</td>
+                        <td>(1-p)/p²</td>
+                        <td>Trials until first success</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Poisson</strong></td>
+                        <td>λ > 0</td>
+                        <td>e^(-λ)λ^k/k!</td>
+                        <td>λ</td>
+                        <td>λ</td>
+                        <td>Rare events, arrivals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uniform</strong></td>
+                        <td>a < b</td>
+                        <td>1/(b-a) for x ∈ [a,b]</td>
+                        <td>(a+b)/2</td>
+                        <td>(b-a)²/12</td>
+                        <td>Equal likelihood over interval</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exponential</strong></td>
+                        <td>λ > 0</td>
+                        <td>λe^(-λx) for x ≥ 0</td>
+                        <td>1/λ</td>
+                        <td>1/λ²</td>
+                        <td>Waiting times, memoryless</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Normal</strong></td>
+                        <td>μ ∈ ℝ, σ² > 0</td>
+                        <td>(1/√(2πσ²))e^(-½((x-μ)/σ)²)</td>
+                        <td>μ</td>
+                        <td>σ²</td>
+                        <td>Natural phenomena, CLT</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standard Normal</strong></td>
+                        <td>-</td>
+                        <td>(1/√(2π))e^(-x²/2)</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>Standardized normal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">14. Special Functions and Constants</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Standard Normal CDF</h3>
+                <div class="formula">Φ(x) = (1/√(2π)) ∫_{-∞}^x e^(-t²/2) dt</div>
+                
+                <div class="property">
+                    <strong>Properties:</strong>
+                    <ul>
+                        <li>Φ(-x) = 1 - Φ(x)</li>
+                        <li>Φ(0) = 0.5</li>
+                        <li>If X ~ N(μ, σ²), then P(X ≤ x) = Φ((x-μ)/σ)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Gamma Function</h3>
+                <div class="formula">Γ(n) = ∫_0^∞ t^(n-1) e^(-t) dt</div>
+                
+                <div class="property">
+                    <strong>Properties:</strong>
+                    <ul>
+                        <li>Γ(n) = (n-1)! for positive integers n</li>
+                        <li>Γ(1/2) = √π</li>
+                        <li>Γ(n+1) = nΓ(n)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">15. Important Notes and Reminders</h2>
+            
+            <div class="note">
+                <strong>Zero Events vs Impossible Events:</strong>
+                <ul>
+                    <li>Zero event (∅): P(∅) = 0 by definition</li>
+                    <li>Impossible event: An event that cannot occur</li>
+                    <li>In continuous distributions: P(X = a) = 0, but this doesn't mean X = a is impossible</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <strong>Independence vs. Uncorrelatedness:</strong>
+                <ul>
+                    <li>Independent ⟹ Uncorrelated (Cov(X,Y) = 0)</li>
+                    <li>Uncorrelated ⟹ Independent is FALSE in general</li>
+                    <li>Exception: For jointly normal random variables, uncorrelatedness implies independence</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <strong>Mutual Exclusivity vs. Independence:</strong>
+                <ul>
+                    <li>Mutually exclusive: P(A ∩ B) = 0</li>
+                    <li>Independent: P(A ∩ B) = P(A)P(B)</li>
+                    <li>If A ⊆ B, then A and B are neither mutually exclusive nor independent</li>
+                    <li>Non-trivial events cannot be both mutually exclusive and independent</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <strong>Conditional Independence:</strong>
+                <br>Two events A and B may be dependent unconditionally but independent given some condition C.
+                <br>P(AB|C) = P(A|C)P(B|C) defines conditional independence given C.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">16. Quick Reference Formulas</h2>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Essential Probability Rules</h3>
+                <div class="formula">P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</div>
+                <div class="formula">P(A^c) = 1 - P(A)</div>
+                <div class="formula">P(A|B) = P(A ∩ B)/P(B), when P(B) > 0</div>
+                <div class="formula">P(A ∩ B) = P(A|B)P(B) = P(B|A)P(A)</div>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Expectation Rules</h3>
+                <div class="formula">E[aX + bY + c] = aE[X] + bE[Y] + c</div>
+                <div class="formula">E[XY] = E[X]E[Y] (if X,Y independent)</div>
+                <div class="formula">Var(aX + b) = a²Var(X)</div>
+                <div class="formula">Var(X + Y) = Var(X) + Var(Y) + 2Cov(X,Y)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">17. Central Limit Theorem and Law of Large Numbers</h2>
+            
+            <div class="theorem">
+                <div class="theorem-title">Central Limit Theorem (CLT)</div>
+                Let X₁, X₂, ..., Xₙ be independent and identically distributed random variables with finite mean μ and variance σ². Then:
+                <div class="formula">
+                    (∑ᵢ₌₁ⁿ Xᵢ - nμ) / (σ√n) →ᵈ N(0,1) as n → ∞
+                </div>
+                Or equivalently, X̄ₙ = (1/n)∑ᵢ₌₁ⁿ Xᵢ satisfies:
+                <div class="formula">
+                    √n(X̄ₙ - μ)/σ →ᵈ N(0,1) as n → ∞
+                </div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Law of Large Numbers (Weak)</div>
+                Under the same conditions as CLT:
+                <div class="formula">
+                    X̄ₙ →ᵖ μ as n → ∞
+                </div>
+                This means P(|X̄ₙ - μ| > ε) → 0 for any ε > 0.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">18. Inequalities and Bounds</h2>
+            
+            <div class="theorem">
+                <div class="theorem-title">Markov's Inequality</div>
+                For any non-negative random variable X and a > 0:
+                <div class="formula">P(X ≥ a) ≤ E[X]/a</div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Chebyshev's Inequality</div>
+                For any random variable X with finite mean μ and variance σ², and k > 0:
+                <div class="formula">P(|X - μ| ≥ kσ) ≤ 1/k²</div>
+                Or equivalently:
+                <div class="formula">P(|X - μ| < kσ) ≥ 1 - 1/k²</div>
+            </div>
+            
+            <div class="theorem">
+                <div class="theorem-title">Jensen's Inequality</div>
+                For a convex function g and random variable X:
+                <div class="formula">E[g(X)] ≥ g(E[X])</div>
+                For concave functions, the inequality is reversed.
+            </div>
+        </div>
+
+        <div class="header" style="margin-top: 50px; border-top: 2px solid #2563eb; border-bottom: none; padding-top: 20px;">
+            <p style="font-size: 14px; color: #64748b;">
+                This comprehensive guide covers fundamental probability theory, random variables, distributions, and their applications. 
+                Use this as a reference for understanding the relationships between discrete and continuous probability concepts.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Add print functionality
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                window.print();
+                e.preventDefault();
+            }
+        });
+        
+        // Auto-print option
+        // window.addEventListener('load', function() {
+        //     setTimeout(() => window.print(), 1000);
+        // });
+    </script>
+</body>
+</html>
